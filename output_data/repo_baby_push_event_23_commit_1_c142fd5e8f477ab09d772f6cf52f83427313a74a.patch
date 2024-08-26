@@ -1,0 +1,53 @@
+From c142fd5e8f477ab09d772f6cf52f83427313a74a Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:15:26 -0700
+Subject: [PATCH] add array tests
+
+---
+ test_array_operations.py | 36 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 36 insertions(+)
+ create mode 100644 test_array_operations.py
+
+diff --git a/test_array_operations.py b/test_array_operations.py
+new file mode 100644
+index 0000000..e6fe49b
+--- /dev/null
++++ b/test_array_operations.py
+@@ -0,0 +1,36 @@
++import unittest
++import numpy as np
++from array_operations import create_random_array, array_mean, array_std, elementwise_multiply, reshape_array
++
++class TestArrayOperations(unittest.TestCase):
++    def test_create_random_array(self):
++        arr = create_random_array(10, 0, 100)
++        self.assertEqual(len(arr), 10)
++        self.assertTrue(all(0 <= x < 100 for x in arr))
++
++    def test_array_mean(self):
++        arr = np.array([1, 2, 3, 4, 5])
++        self.assertEqual(array_mean(arr), 3.0)
++
++    def test_array_std(self):
++        arr = np.array([1, 2, 3, 4, 5])
++        self.assertAlmostEqual(array_std(arr), 1.4142135623730951, places=7)
++
++    def test_elementwise_multiply(self):
++        arr1 = np.array([1, 2, 3])
++        arr2 = np.array([4, 5, 6])
++        result = elementwise_multiply(arr1, arr2)
++        np.testing.assert_array_equal(result, np.array([4, 10, 18]))
++
++    def test_reshape_array(self):
++        arr = np.array([1, 2, 3, 4, 5, 6])
++        reshaped = reshape_array(arr, (2, 3))
++        np.testing.assert_array_equal(reshaped, np.array([[1, 2, 3], [4, 5, 6]]))
++
++    def test_reshape_array_invalid_shape(self):
++        arr = np.array([1, 2, 3, 4, 5])
++        with self.assertRaises(ValueError):
++            reshape_array(arr, (2, 3))
++
++if __name__ == '__main__':
++    unittest.main()
+\ No newline at end of file

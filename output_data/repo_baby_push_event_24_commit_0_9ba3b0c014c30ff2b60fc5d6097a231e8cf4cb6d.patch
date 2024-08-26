@@ -1,0 +1,64 @@
+From 9ba3b0c014c30ff2b60fc5d6097a231e8cf4cb6d Mon Sep 17 00:00:00 2001
+From: Emily McMilin <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:11:46 -0700
+Subject: [PATCH] List (#2)
+
+* add list
+
+* add list tests
+---
+ list_operations.py      | 10 ++++++++++
+ test_list_operations.py | 25 +++++++++++++++++++++++++
+ 2 files changed, 35 insertions(+)
+ create mode 100644 list_operations.py
+ create mode 100644 test_list_operations.py
+
+diff --git a/list_operations.py b/list_operations.py
+new file mode 100644
+index 0000000..733eb03
+--- /dev/null
++++ b/list_operations.py
+@@ -0,0 +1,10 @@
++def find_max(lst):
++    if not lst:
++        raise ValueError("Cannot find max of an empty list")
++    return max(lst)
++
++def remove_duplicates(lst):
++    return list(dict.fromkeys(lst))
++
++def sum_even_numbers(lst):
++    return sum(num for num in lst if num % 2 == 0)
+\ No newline at end of file
+diff --git a/test_list_operations.py b/test_list_operations.py
+new file mode 100644
+index 0000000..c6c484a
+--- /dev/null
++++ b/test_list_operations.py
+@@ -0,0 +1,25 @@
++import unittest
++from list_operations import find_max, remove_duplicates, sum_even_numbers
++
++class TestListOperations(unittest.TestCase):
++    def test_find_max(self):
++        self.assertEqual(find_max([1, 5, 3, 9, 2]), 9)
++        self.assertEqual(find_max([-1, -5, -3]), -1)
++        self.assertEqual(find_max([0]), 0)
++
++    def test_find_max_empty_list(self):
++        with self.assertRaises(ValueError):
++            find_max([])
++
++    def test_remove_duplicates(self):
++        self.assertEqual(remove_duplicates([1, 2, 2, 3, 4, 4, 5]), [1, 2, 3, 4, 5])
++        self.assertEqual(remove_duplicates([1, 1, 1, 1]), [1])
++        self.assertEqual(remove_duplicates([]), [])
++
++    def test_sum_even_numbers(self):
++        self.assertEqual(sum_even_numbers([1, 2, 3, 4, 5, 6]), 12)
++        self.assertEqual(sum_even_numbers([1, 3, 5, 7]), 0)
++        self.assertEqual(sum_even_numbers([]), 0)
++
++if __name__ == '__main__':
++    unittest.main()
+\ No newline at end of file

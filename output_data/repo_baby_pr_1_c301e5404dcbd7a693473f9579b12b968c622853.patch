@@ -1,0 +1,30 @@
+From c301e5404dcbd7a693473f9579b12b968c622853 Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:08:16 -0700
+Subject: [PATCH] add math
+
+---
+ math_operations.py | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+ create mode 100644 math_operations.py
+
+diff --git a/math_operations.py b/math_operations.py
+new file mode 100644
+index 0000000..f7f69b3
+--- /dev/null
++++ b/math_operations.py
+@@ -0,0 +1,13 @@
++def add(a, b):
++    return a + b
++
++def subtract(a, b):
++    return a - b
++
++def multiply(a, b):
++    return a * b
++
++def divide(a, b):
++    if b == 0:
++        raise ValueError("Cannot divide by zero")
++    return a / b
+\ No newline at end of file

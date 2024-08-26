@@ -1,0 +1,36 @@
+From 490e69d8aa180680d8457d93c2a7ed63c903cb80 Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:15:15 -0700
+Subject: [PATCH] add array
+
+---
+ array_operations.py | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+ create mode 100644 array_operations.py
+
+diff --git a/array_operations.py b/array_operations.py
+new file mode 100644
+index 0000000..ef079c4
+--- /dev/null
++++ b/array_operations.py
+@@ -0,0 +1,19 @@
++import numpy as np
++
++def create_random_array(size, low=0, high=100):
++    return np.random.randint(low, high, size)
++
++def array_mean(arr):
++    return np.mean(arr)
++
++def array_std(arr):
++    return np.std(arr)
++
++def elementwise_multiply(arr1, arr2):
++    return np.multiply(arr1, arr2)
++
++def reshape_array(arr, shape):
++    try:
++        return np.reshape(arr, shape)
++    except ValueError:
++        raise ValueError("Cannot reshape array to the given shape")
+\ No newline at end of file

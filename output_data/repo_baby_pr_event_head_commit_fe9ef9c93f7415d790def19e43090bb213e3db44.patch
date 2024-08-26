@@ -1,0 +1,39 @@
+From fe9ef9c93f7415d790def19e43090bb213e3db44 Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:18:18 -0700
+Subject: [PATCH] add strings tests
+
+---
+ test_string_operations.py | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+ create mode 100644 test_string_operations.py
+
+diff --git a/test_string_operations.py b/test_string_operations.py
+new file mode 100644
+index 0000000..07583cd
+--- /dev/null
++++ b/test_string_operations.py
+@@ -0,0 +1,22 @@
++import unittest
++from string_operations import reverse_string, count_vowels, is_palindrome
++
++class TestStringOperations(unittest.TestCase):
++    def test_reverse_string(self):
++        self.assertEqual(reverse_string("hello"), "olleh")
++        self.assertEqual(reverse_string("python"), "nohtyp")
++        self.assertEqual(reverse_string(""), "")
++
++    def test_count_vowels(self):
++        self.assertEqual(count_vowels("hello"), 2)
++        self.assertEqual(count_vowels("AEIOU"), 5)
++        self.assertEqual(count_vowels("xyz"), 0)
++
++    def test_is_palindrome(self):
++        self.assertTrue(is_palindrome("A man a plan a canal Panama"))
++        self.assertTrue(is_palindrome("racecar"))
++        self.assertFalse(is_palindrome("hello"))
++        self.assertTrue(is_palindrome(""))
++
++if __name__ == '__main__':
++    unittest.main()
+\ No newline at end of file

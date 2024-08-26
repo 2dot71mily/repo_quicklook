@@ -1,0 +1,16 @@
+From c86315ccfa145f10638c6c976d1a440cf4226ad5 Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:23:32 -0700
+Subject: [PATCH] mod gitignore
+
+---
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/.gitignore b/.gitignore
+index 691037e..26be7c1 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1 +1,2 @@
+ .venv/*
++.DS_Store

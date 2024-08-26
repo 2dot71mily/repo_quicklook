@@ -1,0 +1,20 @@
+From 207a4028fa7176c869f3816b143fb1ada51a10ac Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:23:12 -0700
+Subject: [PATCH] add docker compose
+
+---
+ docker/docker-compose.yaml | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 docker/docker-compose.yaml
+
+diff --git a/docker/docker-compose.yaml b/docker/docker-compose.yaml
+new file mode 100644
+index 0000000..f341111
+--- /dev/null
++++ b/docker/docker-compose.yaml
+@@ -0,0 +1,4 @@
++services:
++  main:
++     build: .
++

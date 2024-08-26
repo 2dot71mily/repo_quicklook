@@ -1,0 +1,47 @@
+From 95c67239fa5cb1c47013d2ade665914c947f9d78 Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:08:25 -0700
+Subject: [PATCH] add math tests
+
+---
+ test_math_operations.py | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+ create mode 100644 test_math_operations.py
+
+diff --git a/test_math_operations.py b/test_math_operations.py
+new file mode 100644
+index 0000000..8b6f3c4
+--- /dev/null
++++ b/test_math_operations.py
+@@ -0,0 +1,30 @@
++import unittest
++from math_operations import add, subtract, multiply, divide
++
++class TestMathOperations(unittest.TestCase):
++    def test_add(self):
++        self.assertEqual(add(2, 3), 5)
++        self.assertEqual(add(-1, 1), 0)
++        self.assertEqual(add(0, 0), 0)
++
++    def test_subtract(self):
++        self.assertEqual(subtract(5, 3), 2)
++        self.assertEqual(subtract(10, 15), -5)
++        self.assertEqual(subtract(0, 0), 0)
++
++    def test_multiply(self):
++        self.assertEqual(multiply(2, 3), 6)
++        self.assertEqual(multiply(-2, 4), -8)
++        self.assertEqual(multiply(0, 5), 0)
++
++    def test_divide(self):
++        self.assertEqual(divide(6, 3), 2)
++        self.assertEqual(divide(10, 2), 5)
++        self.assertAlmostEqual(divide(1, 3), 0.3333333, places=6)
++
++    def test_divide_by_zero(self):
++        with self.assertRaises(ValueError):
++            divide(5, 0)
++
++if __name__ == '__main__':
++    unittest.main()
+\ No newline at end of file

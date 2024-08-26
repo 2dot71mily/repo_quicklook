@@ -1,0 +1,17 @@
+From 26ddf36ea221b2856901d8f7f26b07872e1276c4 Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:06:58 -0700
+Subject: [PATCH] setup
+
+---
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..691037e
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++.venv/*

@@ -1,0 +1,21 @@
+From 2fd7c7f721458a60f7287c75d319eb8c0cb06e9b Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:22:56 -0700
+Subject: [PATCH] add docker file
+
+---
+ docker/dockerfile | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 docker/dockerfile
+
+diff --git a/docker/dockerfile b/docker/dockerfile
+new file mode 100644
+index 0000000..bd1d6c6
+--- /dev/null
++++ b/docker/dockerfile
+@@ -0,0 +1,5 @@
++FROM python:3
++RUN git clone https://github.com/2dot71mily/baby_repo
++RUN cd baby_repo && pip3 install -r requirements.txt
++WORKDIR baby_repo
++CMD ["python3", "-m", "unittest", "discover" ]

@@ -1,0 +1,25 @@
+From d82a833b896ee0bb684db799a8d06e4320b3586e Mon Sep 17 00:00:00 2001
+From: Emily McMilin <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:44:46 -0700
+Subject: [PATCH] mod readme (#6)
+
+---
+ README.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/README.md b/README.md
+index 8bc8734..b608cb0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,10 @@
+ # repo_baby
++
++This main dir is function & unittest pairs composed via:
++- commits directly to main
++- commits to main via pull request
++- commits to main via squashed pull request
++
++See `docker` dir to build a container that downloads the repo, installs requirements, and runs unittests.
++
++See `gh_data` dir for json of this repo's events and PR commits scraped via `gh` api.
+\ No newline at end of file

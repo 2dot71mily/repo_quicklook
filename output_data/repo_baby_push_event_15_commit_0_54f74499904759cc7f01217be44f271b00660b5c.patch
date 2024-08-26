@@ -1,0 +1,96 @@
+From 54f74499904759cc7f01217be44f271b00660b5c Mon Sep 17 00:00:00 2001
+From: Emily McMilin <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:24:21 -0700
+Subject: [PATCH] Docker (#4)
+
+* add docker file
+
+* add docker compose
+
+* add docker readme
+
+* mod gitignore
+---
+ .gitignore                 |  1 +
+ docker/README.md           | 39 ++++++++++++++++++++++++++++++++++++++
+ docker/docker-compose.yaml |  4 ++++
+ docker/dockerfile          |  5 +++++
+ 4 files changed, 49 insertions(+)
+ create mode 100644 docker/README.md
+ create mode 100644 docker/docker-compose.yaml
+ create mode 100644 docker/dockerfile
+
+diff --git a/.gitignore b/.gitignore
+index 691037e..26be7c1 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1 +1,2 @@
+ .venv/*
++.DS_Store
+diff --git a/docker/README.md b/docker/README.md
+new file mode 100644
+index 0000000..5732d2c
+--- /dev/null
++++ b/docker/README.md
+@@ -0,0 +1,39 @@
++### docker
++
++Run dockerfile to:
++- download python repo
++- install requirements
++- run unittests
++
++Run:
++`docker-compose -f docker-compose.yaml up --build`
++
++Expected output:
++```
++[+] Building 1.4s (10/10) FINISHED                         docker:desktop-linux
++ => [main internal] load build definition from dockerfile                  0.0s
++ => => transferring dockerfile: 274B                                       0.0s
++ => [main internal] load metadata for docker.io/library/python:3           1.3s
++ => [main auth] library/python:pull token for registry-1.docker.io         0.0s
++ => [main internal] load .dockerignore                                     0.0s
++ => => transferring context: 2B                                            0.0s
++ => [main 1/4] FROM docker.io/library/python:3@sha256:e3d5b6f95ce66923b5e  0.0s
++ => CACHED [main 2/4] RUN git clone https://github.com/2dot71mily/baby_re  0.0s
++ => CACHED [main 3/4] RUN cd baby_repo && pip3 install -r requirements.tx  0.0s
++ => CACHED [main 4/4] WORKDIR baby_repo                                    0.0s
++ => [main] exporting to image                                              0.0s
++ => => exporting layers                                                    0.0s
++ => => writing image sha256:ecce6ac4c21273b06020515ea0cac0b02f0e2f0720eb6  0.0s
++ => => naming to docker.io/library/docker-main                             0.0s
++ => [main] resolving provenance for metadata file                          0.0s
++[+] Running 2/1
++ ✔ Network docker_default   Created                                        0.0s 
++ ✔ Container docker-main-1  Created                                        0.0s 
++Attaching to main-1
++main-1  | ..................
++main-1  | ----------------------------------------------------------------------
++main-1  | Ran 18 tests in 0.053s
++main-1  | 
++main-1  | OK
++main-1 exited with code 0
++```
+\ No newline at end of file
+diff --git a/docker/docker-compose.yaml b/docker/docker-compose.yaml
+new file mode 100644
+index 0000000..f341111
+--- /dev/null
++++ b/docker/docker-compose.yaml
+@@ -0,0 +1,4 @@
++services:
++  main:
++     build: .
++
+diff --git a/docker/dockerfile b/docker/dockerfile
+new file mode 100644
+index 0000000..bd1d6c6
+--- /dev/null
++++ b/docker/dockerfile
+@@ -0,0 +1,5 @@
++FROM python:3
++RUN git clone https://github.com/2dot71mily/baby_repo
++RUN cd baby_repo && pip3 install -r requirements.txt
++WORKDIR baby_repo
++CMD ["python3", "-m", "unittest", "discover" ]

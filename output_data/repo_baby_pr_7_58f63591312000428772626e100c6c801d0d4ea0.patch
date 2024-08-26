@@ -1,0 +1,23 @@
+From 58f63591312000428772626e100c6c801d0d4ea0 Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Sun, 25 Aug 2024 21:31:11 -0700
+Subject: [PATCH] add e2e test
+
+---
+ test_e2e_logistic_regression.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100644 test_e2e_logistic_regression.py
+
+diff --git a/test_e2e_logistic_regression.py b/test_e2e_logistic_regression.py
+new file mode 100644
+index 0000000..c175f52
+--- /dev/null
++++ b/test_e2e_logistic_regression.py
+@@ -0,0 +1,6 @@
++from e2e_logistic_regression import run_e2e_test
++
++
++def test_e2e():
++    accuracy = run_e2e_test()
++    assert accuracy > 0.7, f"E2E test failed: accuracy {accuracy} is below threshold of 0.7"
+\ No newline at end of file

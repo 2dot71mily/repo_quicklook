@@ -1,0 +1,17 @@
+From 350afeb0672d753804dcb1c531e6c4f0ddbf5763 Mon Sep 17 00:00:00 2001
+From: emily <emily.mcmilin@gmail.com>
+Date: Thu, 22 Aug 2024 23:39:20 -0700
+Subject: [PATCH] add gh pr commits data
+
+---
+ gh_data/repo_baby_pr4_commits.json | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 gh_data/repo_baby_pr4_commits.json
+
+diff --git a/gh_data/repo_baby_pr4_commits.json b/gh_data/repo_baby_pr4_commits.json
+new file mode 100644
+index 0000000..59045c5
+--- /dev/null
++++ b/gh_data/repo_baby_pr4_commits.json
+@@ -0,0 +1 @@
++{"commits":[{"authoredDate":"2024-08-23T06:22:56Z","authors":[{"email":"emily.mcmilin@gmail.com","id":"MDQ6VXNlcjIxMjkyMDU5","login":"2dot71mily","name":"emily"}],"committedDate":"2024-08-23T06:22:56Z","messageBody":"","messageHeadline":"add docker file","oid":"2fd7c7f721458a60f7287c75d319eb8c0cb06e9b"},{"authoredDate":"2024-08-23T06:23:12Z","authors":[{"email":"emily.mcmilin@gmail.com","id":"MDQ6VXNlcjIxMjkyMDU5","login":"2dot71mily","name":"emily"}],"committedDate":"2024-08-23T06:23:12Z","messageBody":"","messageHeadline":"add docker compose","oid":"207a4028fa7176c869f3816b143fb1ada51a10ac"},{"authoredDate":"2024-08-23T06:23:24Z","authors":[{"email":"emily.mcmilin@gmail.com","id":"MDQ6VXNlcjIxMjkyMDU5","login":"2dot71mily","name":"emily"}],"committedDate":"2024-08-23T06:23:24Z","messageBody":"","messageHeadline":"add docker readme","oid":"5bdb9b155e27193208056f293e29788c3bb3a163"},{"authoredDate":"2024-08-23T06:23:32Z","authors":[{"email":"emily.mcmilin@gmail.com","id":"MDQ6VXNlcjIxMjkyMDU5","login":"2dot71mily","name":"emily"}],"committedDate":"2024-08-23T06:23:32Z","messageBody":"","messageHeadline":"mod gitignore","oid":"c86315ccfa145f10638c6c976d1a440cf4226ad5"}]}
